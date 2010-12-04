@@ -155,7 +155,6 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
 
           public static void main(String[] args) throws CasperException, IOException, ScriptException {
         
-              String code ="Hello ${name} !";
               Properties var  = new Properties();
               var.put("name","vivek");
               //Don't forget to add casper.jar to your java class library
@@ -173,3 +172,47 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
         Hello handsome vivek 
      }}}
     _Here concept of using java object inside script is also introduced.Javascript will check for 'name' object if it is 'vivek' it will return handsome ,otherwise it will return beautiful._
+
+==Example 7 - Understanding print() and $out() functions==
+  _Example to demonstrate the difference between *'print'* and *'out'* functions._
+
+  # Create a file *'hello.casper'* and add the following code to the file.
+    {{{
+      <% print("This line printed by print function"); %>
+      <% $out("This line printed by $out function"); %>
+    }}}
+  # Create a file *'Main.java'* and add the following code to the file
+    {{{
+     import com.casper.Casper;
+     import com.casper.CasperException; 
+     import java.io.FileInputStream;
+     import java.io.FileOutputStream;
+     import java.io.IOException;
+     import java.util.Properties;
+     import javax.script.ScriptException;
+    
+     public class Main {
+
+          public static void main(String[] args) throws CasperException, IOException, ScriptException {
+        
+              //Don't forget to add casper.jar to your java class library
+             //Don't forget to add var result in script exception
+             //Make sure the file paths are correct
+            Casper.eval(new FileInputStream("hello.casper"),new FileOutputStream("result.text"),var);
+              }
+
+    }
+
+  }}}
+  # Compile your Main.java code and run 
+  # Output in result.text
+    {{{
+        
+       This line printed by $out function 
+     }}}
+  # Output in console
+     {{{
+           This line printed by print function
+     }}}
+    _$out() is used by casper to write output to outputstream define in the function.if it is defined as System.out the it will print result in console.But print() function is default javascript function will print result in console.If you try to execute hello.casper using casper.jar(ref Example 1) you can see but the line in console.Avoid using print() function unless your are clear with the execution._
+
