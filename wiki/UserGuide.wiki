@@ -1,0 +1,12 @@
+#labels casep
+=User Guide=
+
+==Introduction==
+   *Casper* is a simple scriplet language written in java and uses same tag conversion like     JSP.Following script tag can be used to script.
+   # ===Scriptlet=== - *<%* _javascript code_ *%>* 
+      All javascript action statement like for,if,while can be embedded using expression tag.
+  # ===Expression=== = *<%=* _javascript code_ *%>*
+
+
+==Example - Simple Template==
+  # Create a file "ex1.casper" and add the following code
