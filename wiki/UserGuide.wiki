@@ -31,7 +31,7 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
         Hello World using scriptlet tag
      }}}
 
----
+----
 
 ==Example 2 - Redirecting output to file==
   _Example to demonstrate how to write the result to output file_
@@ -49,7 +49,7 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
         Hello World using scriptlet tag
      }}}
 
----
+----
 
 ==Example 3 - Compile scriptlet to javascript==
   _Casper convert scriplet to an intermediate javascript code and execute it using the javascript engine.This example demonstrate how to get the intermediate javascript code._
@@ -78,7 +78,7 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
 
      _$out() is a casper defined function use to print output to the corresponding outputstream more.._
 
----
+----
 
 ==Example 4 - Embedding in java==
   _Example to demonstrate how to embedded capser in your java code_
@@ -111,7 +111,7 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
     # eval'('InputStream in,OutputStream op,Properties var) - var property used to define java variable to your scriptlet.
     # compile'('InputStream in,OutputStream op) - takes scriplet code and write javascript code. 
 
----
+----
 
 ==Example 5 - Using java variables in scriptlet==
   _Example to demonstrate how to pass java objects to scriplet.In this example we will pass name a input from java code and print it scriptlet_
@@ -143,7 +143,7 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
         Hello vivek !
      }}}
 
----
+----
 
 ==Example 6 - Reading and writing to file using Casper java API==
   _Example to demonstrate how to read scriplet from a file and eval and write the output to a file.In this example we use hello.casper as input and result.text as output file._
@@ -183,7 +183,7 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
      }}}
     _Here concept of using java object inside script is also introduced.Javascript will check for 'name' object if it is 'vivek' it will return handsome ,otherwise it will return beautiful._
 
----
+----
 
 ==Example 7 - Understanding print() and $out() functions==
   _Example to demonstrate the difference between *'print'* and *'out'* functions._
@@ -228,7 +228,7 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
      }}}
     _$out() is used by casper to write output to outputstream define in the function.if it is defined as System.out the it will print result in console.But print() function is default javascript function will print result in console.If you try to execute hello.casper using casper.jar(ref Example 1) you can see but the line in console.Avoid using print() function unless your are clear with the execution._
 
----
+----
 
 ==Example 8 - Get Compiled java script code using java==
   _Example to demonstrate how to get intermediate javascript code using java class._
