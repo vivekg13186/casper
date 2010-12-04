@@ -100,7 +100,8 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
     {{{
         Hello World
      }}}
-   _Casper class(API class) provide static methods to eval and compile you code_
+   {{{ _Casper class(API class) provide static methods to eval and compile you code_
    # eval'('InputStream in,OutputStream op) - takes scriplet code and write result in op
    # eval'('InputStream in,OutputStream op,Properties var) - var property used to define java variable to your scriptlet
    # compile'('InputStream in,OutputStream op) - takes scriplet code and write javascript code 
+}}}
