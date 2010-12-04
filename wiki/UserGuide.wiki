@@ -3,7 +3,7 @@
 ==Introduction==
 *Casper* is a simple scriplet language written in java .Uses JSP like coding conversion.
 
-==Script Tags==
+==Script Tag Basics==
 
 _*Scriptlet*_ - *<%* _javascript code_ *%>* 
       All javascript action statement like for,if,while can be embedded using scriptlet tag.
@@ -14,8 +14,9 @@ _*Expression*_ - *<%=* _javascript code_ *%>*
 _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
       All template text to be printed can be embedded using expression tag.Eg. ${ variable }
 
-
-[UserGuide#Example_1_-_Hello_World_Template Example1]
+== Table of Content ==
+|| Title || About ||
+|| [UserGuide#Example_1_-_Hello_World_Template Hello World] || small scriptlet to explain how tags works ||
 ==Example 1 - Hello World Template==
   _Example to demonstrate how to use the tag and print 'Hello World'_
   # Create a file *'ex.casper'* and add the following code to the file
