@@ -15,6 +15,7 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
       All template text to be printed can be embedded using expression tag.Eg. ${ variable }
 
 
+[Simple#Example_1_-_Hello_World_Template]
 ==Example 1 - Hello World Template==
   _Example to demonstrate how to use the tag and print 'Hello World'_
   # Create a file *'ex.casper'* and add the following code to the file
