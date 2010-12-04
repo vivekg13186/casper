@@ -1,12 +1,32 @@
-#labels casep
 =User Guide=
 
 ==Introduction==
-*Casper* is a simple scriplet language written in java and uses same tag conversion like     JSP.Following script tag can be used to script.
-   # ===Scriptlet=== - *<%* _javascript code_ *%>* 
-      All javascript action statement like for,if,while can be embedded using expression tag.
-  # ===Expression=== = *<%=* _javascript code_ *%>*
+*Casper* is a simple scriplet language written in java .Uses JSP like coding conversion.
+
+==Script Tags==
+
+_*Scriptlet*_ - *<%* _javascript code_ *%>* 
+      All javascript action statement like for,if,while can be embedded using scriptlet tag.
+
+_*Expression*_ - *<%=* _javascript code_ *%>*
+      All template text to be printed can be embedded using expression tag.Eg. <%= variable %>
+
+_*Expression Language or EL tag*_ - *${* _javascript code_ *}*
+      All template text to be printed can be embedded using expression tag.Eg. ${ variable }
 
 
-==Example - Simple Template==
-  # Create a file "ex1.casper" and add the following code
+==Example1 - Simple Template==
+  _Example to demonstrate how to use the tag and print 'Hello World'_
+  # Create a file "ex1.casper" and add the following code to the file
+    {{{
+       <%=  "Hello World using expression tag" %>
+       ${  "Hello World using EL tag" }
+       <% print("Hello World using scriptlet tag") %>
+    }}}
+   # Execute the program - _* java -jar casper.jar hello.casper*_
+   #*Output*-
+    {{{
+        Hello World using expression tag
+        Hello World using EL tag
+        Hello World using scriptlet tag
+     }}}
