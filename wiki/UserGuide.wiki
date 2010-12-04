@@ -1,5 +1,7 @@
-=User Guide=
 #summary Casper api user guide
+#labels Phase-Deploy
+=User Guide=
+
 ==Introduction==
 *Casper* is a simple scriplet language written in java .Uses JSP like coding conversion.
 
