@@ -15,8 +15,17 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
       All template text to be printed can be embedded using expression tag.Eg. ${ variable }
 
 == Table of Content ==
-|| Title || About ||
-|| [UserGuide#Example_1_-_Hello_World_Template Hello World] || small scriptlet to explain how tags works ||
+|| Title || Interface|| About ||
+|| [UserGuide#Example_1_-_Hello_World_Template Hello World] || Console || small scriptlet to explain how tags works ||
+|| [UserGuide#Example_2_-_Redirecting_output_to_file Output File Redirection] || Console || explain how to redirect output to file ||
+|| [UserGuide#Example_3_-_Compile_scriptlet_to_javascript Javascript Code] || Console || explain how to get intermediate javascript code ||
+|| [UserGuide#Example_4_-_Embedding_in_java Embedding Casper] || Java || explain how to embedded in java code ||
+|| [UserGuide#Example_5_-_Using_java_variables_in_scriptlet Handling Variables] || Java || explain how to use java object within scriptlet code ||
+|| [UserGuide#Example_6_-_Reading_and_writing_to_file_using_Casper_java_API File IO] || Java || explain how to read scriplet code from file and write output to a file || 
+|| [UserGuide#Example_7_-_Understanding_print()_and_$out()_functions $out()] || Java || explain the difference between $out() and print() function ||
+|| [UserGuide#Example_8_-_Get_Compiled_java_script_code_using_java Compiled Javascript code]|| Java || explain how to get intermediate javascript code using java api ||
+
+
 ==Example 1 - Hello World Template==
   _Example to demonstrate how to use the tag and print 'Hello World'_
   # Create a file *'ex.casper'* and add the following code to the file
