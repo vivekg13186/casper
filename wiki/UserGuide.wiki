@@ -17,7 +17,7 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
 
 ==Example 1 - Hello World Template==
   _Example to demonstrate how to use the tag and print 'Hello World'_
-  # Create a file "ex.casper" and add the following code to the file
+  # Create a file *'ex.casper'* and add the following code to the file
     {{{
        <%=  "Hello World using expression tag" %>
        ${  "Hello World using EL tag" }
@@ -33,14 +33,14 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
 
 ==Example 2 - Redirecting output to file==
   _Example to demonstrate how to write the result to output file_
-  # Create a file "ex.casper" and add the following code to the file
+  # Create a file *'ex.casper'* and add the following code to the file
     {{{
        <%=  "Hello World using expression tag" %>
        ${  "Hello World using EL tag" }
        <% print("Hello World using scriptlet tag") %>
     }}}
   # Execute the program - _* java -jar casper.jar ex.casper result.text*_
-  # Open 'result.text' file you can see the following output :
+  # Open *'result.text'* file you can see the following output :
     {{{
         Hello World using expression tag
         Hello World using EL tag
@@ -49,7 +49,7 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
 
 ==Example 3 - Compile scriptlet to javascript==
   _Casper convert scriplet to an intermediate javascript code and execute it using the javascript engine.This example demonstrate how to get the intermediate javascript code_
-  # Create a file "ex.casper" and add the following code to the file
+  # Create a file *'ex.casper'* and add the following code to the file
     {{{
        <%=  "Hello World using expression tag" %>
        ${  "Hello World using EL tag" }
@@ -70,3 +70,6 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
         $out("\r\n       ");
         print("Hello World using scriptlet tag") 
      }}}
+    _If you don't provide result.text in command output will printed in your console_
+
+    _$out() is a casper defined function use to print output to the corresponding outputstream more.._
