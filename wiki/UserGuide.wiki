@@ -134,3 +134,42 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
     {{{
         Hello vivek !
      }}}
+
+==Example 6 - Reading and writing to file using Casper java API==
+  _Example to demonstrate how to read scriplet from a file and eval and write the output to a file.In this example we use hello.casper as input and result.text as output file._
+  # Create a file *'hello.casper'* and add the following code to the file.
+    {{{
+      Hello <% if(name =="vivek" ) { %> handsome <% } else { %> beautiful  <% } %> ${name}
+    }}}
+  # Create a file *'Main.java'* and add the following code to the file
+    {{{
+     import com.casper.Casper;
+     import com.casper.CasperException; 
+     import java.io.FileInputStream;
+     import java.io.FileOutputStream;
+     import java.io.IOException;
+     import java.util.Properties;
+     import javax.script.ScriptException;
+    
+     public class Main {
+
+          public static void main(String[] args) throws CasperException, IOException, ScriptException {
+        
+              String code ="Hello ${name} !";
+              Properties var  = new Properties();
+              var.put("name","vivek");
+              //Don't forget to add casper.jar to your java class library
+             //Don't forget to add var result in script exception
+             //Make sure the file paths are correct
+            Casper.eval(new FileInputStream("hello.casper"),new FileOutputStream("result.text"),var);
+              }
+
+    }
+
+  }}}
+  # Compile your Main.java code and run 
+  # Output in result.text
+    {{{
+        Hello handsome vivek 
+     }}}
+    _Here concept of using java object inside script is also introduced.Javascript will check for 'name' object if it is 'vivek' it will return handsome ,otherwise it will return beautiful._
