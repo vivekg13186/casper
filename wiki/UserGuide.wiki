@@ -39,7 +39,7 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
        ${  "Hello World using EL tag" }
        <% print("Hello World using scriptlet tag") %>
     }}}
-  # Execute the program - _* java -jar casper.jar ex.casper result.text*_
+  # Execute the program - _* java -jar casper.jar ex.casper result.text.*_
   # Open *'result.text'* file you can see the following output :
     {{{
         Hello World using expression tag
@@ -48,14 +48,14 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
      }}}
 
 ==Example 3 - Compile scriptlet to javascript==
-  _Casper convert scriplet to an intermediate javascript code and execute it using the javascript engine.This example demonstrate how to get the intermediate javascript code_
-  # Create a file *'ex.casper'* and add the following code to the file
+  _Casper convert scriplet to an intermediate javascript code and execute it using the javascript engine.This example demonstrate how to get the intermediate javascript code._
+  # Create a file *'ex.casper'* and add the following code to the file.
     {{{
        <%=  "Hello World using expression tag" %>
        ${  "Hello World using EL tag" }
        <% print("Hello World using scriptlet tag") %>
     }}}
-  # Execute the program - _* java -jar ex.jar -compile hello.casper result.text*_
+  # Execute the program - _* java -jar ex.jar -compile hello.casper result.text.*_
   # Open *'result.text'* file you can see the following output :
     {{{
         function $out(input){
@@ -89,18 +89,48 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
           public static void main(String[] args) throws CasperException, IOException, ScriptException {
         
              String code ="<%= \"Hello World\" %>";
-            //Dont forget to add casper.jar to your java class library
+            //Don't forget to add casper.jar to your java class library
            Casper.eval(new ByteArrayInputStream(code.getBytes()),System.out);
           }
 
       }
   }}}
-  # Compile your Main.java code and run 
+  # Compile your Main.java code and run.
   # Output 
     {{{
         Hello World
      }}}
-   _Casper class(API class) provide static methods to eval and compile you code_
-  # eval'('InputStream in,OutputStream op) - takes scriplet code and write result in op
-  # eval'('InputStream in,OutputStream op,Properties var) - var property used to define java variable to your scriptlet
-  # compile'('InputStream in,OutputStream op) - takes scriplet code and write javascript code 
+   _Casper class(API class) provide static methods to eval and compile you code._
+    # eval'('InputStream in,OutputStream op) - takes scriplet code and write result in op.
+    # eval'('InputStream in,OutputStream op,Properties var) - var property used to define java variable to your scriptlet.
+    # compile'('InputStream in,OutputStream op) - takes scriplet code and write javascript code. 
+
+==Example 5 - Using java variables in scriptlet==
+  _Example to demonstrate how to pass java objects to scriplet.In this example we will pass name a input from java code and print it scriptlet_
+  # Create a file *'Main.java'* and add the following code to the file
+    {{{
+     import com.casper.Casper;
+     import com.casper.CasperException;
+     import java.io.ByteArrayInputStream;
+     import java.io.IOException;
+     import java.util.Properties;
+     import javax.script.ScriptException;
+
+     public class Main {
+
+           public static void main(String[] args) throws CasperException, IOException, ScriptException {
+        
+               String code ="Hello ${name} !";
+               Properties var  = new Properties();
+               var.put("name","vivek");
+               //Don't forget to add casper.jar to your java class library
+               //Don't forget to add var result in script exception
+               Casper.eval(new ByteArrayInputStream(code.getBytes()),System.out,var);
+           }
+     }
+  }}}
+  # Compile your Main.java code and run 
+  # Output 
+    {{{
+        Hello vivek !
+     }}}
