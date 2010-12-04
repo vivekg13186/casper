@@ -56,7 +56,7 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
        <% print("Hello World using scriptlet tag") %>
     }}}
   # Execute the program - _* java -jar ex.jar -compile hello.casper result.text*_
-  # Open 'result.text' file you can see the following output :
+  # Open *'result.text'* file you can see the following output :
     {{{
         function $out(input){
               if(input==undefined || input==null || input=="")
@@ -72,4 +72,31 @@ _*Expression Language or EL tag*_ - *${* _javascript code_ *}*
      }}}
     _If you don't provide result.text in command output will printed in your console_
 
-    _$out() is a casper defined function use to print output to the corresponding outputstream more.._
+     _$out() is a casper defined function use to print output to the corresponding outputstream more.._
+
+==Example 4 - Embedding in java==
+  _Example to demonstrate how to write the result to output file_
+  # Create a file *'Main.java'* and add the following code to the file
+    {{{
+       import com.casper.Casper;
+       import com.casper.CasperException;
+       import java.io.ByteArrayInputStream;
+       import java.io.IOException;
+       import javax.script.ScriptException;
+
+       public class Main {
+
+          public static void main(String[] args) throws CasperException, IOException, ScriptException {
+        
+             String code ="<%= \"Hello World\" %>";
+            //Dont forget to add casper.jar to your java class library
+           Casper.eval(new ByteArrayInputStream(code.getBytes()),System.out);
+          }
+
+      }
+  }}}
+  # Compile your Main.java code and run 
+  # Output 
+    {{{
+        Hello World
+     }}}
