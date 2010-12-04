@@ -1,4 +1,4 @@
-#summary Internal working of casper code.
+#summary Introduction to casper code.
 
 =Developer Guide=
 
@@ -38,6 +38,7 @@
   *  _*Properties var*_ - Allow java object asscess to scriptlet ref [UserGuide#Example_5_-_Using_java_variables_in_scriptlet UserGuide] 
 
 ==Console==
+      Console funtionality is implemented in com.casper.Console class.__
 
    ===Usage===
 
