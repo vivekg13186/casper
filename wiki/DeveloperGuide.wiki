@@ -36,3 +36,14 @@
   *  _*InputStream io*_ - Scriptlet code input.
   *  _*OutputStream op*_ - Final result text output.
   *  _*Properties var*_ - Allow java object asscess to scriptlet ref [UserGuide#Example_5_-_Using_java_variables_in_scriptlet UserGuide] 
+
+==Console==
+
+   ===Usage===
+
+	 # inputfilename                            ;return evaluated output
+	 # _*-compile*_ inputfilename                   ;return javascript code
+	 # inputfilename outputfilename             ;return evaluated output to outputfile
+	 # _*-compile*_ inputfilename outputfilename    ;return javascript code to outputfile
+
+_use *-compile* flag to get javascript source code_
