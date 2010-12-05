@@ -502,10 +502,11 @@ abstract class Node {
             //out.write("/*"+n.text+"*/\n");
        }
 
+        //removed eval function
         public void visit(Expression n) throws CasperException, IOException {
             
             if(n.text!=null)
-            out.write("$out(eval(\""+escapeJavaScriptString(n.text)+"\"));\n");
+            out.write("$out(("+n.text+"));\n");
         }
 
         public void visit(Scriptlet n) throws CasperException, IOException {
@@ -513,14 +514,15 @@ abstract class Node {
             out.write(n.text);
         }
 
+        //removed eval function
         public void visit(ELExpression n) throws CasperException, IOException {
             if(n.text!=null)
-            out.write("$out(eval(\""+escapeJavaScriptString(n.text)+"\"));\n");
+            out.write("$out(("+n.text+"));\n");
         }
 
         public void visit(TemplateText n) throws CasperException, IOException {
             if(n.text!=null)
-            out.write("$out(\""+escapeJavaScriptString(n.text)+"\");\n");
+            out.write("$out((\""+escapeJavaScriptString(n.text)+"\"));\n");
         }
 
         //Supporting functions for code generation
