@@ -27,7 +27,7 @@ This guide walk through how to configure casper in your web application.
     </servlet-mapping>
     
      }}}
-  * Replace *$dir-path$* with you dir folder path where put all your '*'.casper files.
+  * Replace *$dir-path$* with you dir folder path where put all your `*`.casper files.
    
    Thats it now you have successfully installed casper into your web application.
 == What is the code snippet and how it work ? ==
