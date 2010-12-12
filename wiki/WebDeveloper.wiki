@@ -1,0 +1,11 @@
+#summary How to configure in web applications.
+
+= Introduction =
+
+This guide walk through how to configure casper in your web application.
+
+
+= Installation =
+
+  * Download latest version of "casper.jar" file from download page.
+   
