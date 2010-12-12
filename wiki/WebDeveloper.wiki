@@ -26,11 +26,11 @@ This guide walk through how to configure casper in your web application.
     </servlet-mapping>
     
      }}}
-  * Replace *$dir-path$* with you dir folder path where put all your *.casper files.
+  * Replace *$dir-path$* with you dir folder path where put all your '*'.casper files.
    
    Thats it now you have successfully installed casper into your web application.
 == What is the code snippet and how it work ? ==
-  *  First we configure our casper Servlet which comes as a part of casper.jar file ,also we are providing a addtional paramater $dir-path$ this tell servlet where to pick up the casper files.Note make sure you are adding '/' at end of file path otherwise casper will through execption.
+  *  First we configure our casper Servlet which comes as a part of casper.jar file ,also we are providing a addtional paramater $dir-path$ this tell servlet where to pick up the casper files.Note make sure you are adding '/' at end of file path otherwise casper will through exception.
      {{{
        <servlet>
            <description>eval casper files</description>
