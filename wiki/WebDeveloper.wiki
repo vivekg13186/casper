@@ -1,4 +1,5 @@
 #summary How to configure in web applications.
+#labels Phase-Design,Phase-Implementation,Featured
 
 = Introduction =
 
