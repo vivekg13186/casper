@@ -29,7 +29,7 @@ This guide walk through how to configure casper in your web application.
   * Replace *$dir-path$* with you dir folder path where put all your *.casper files.
    
    Thats it now you have successfully installed casper into your web application.
- == What is the code snippet and how it work ? ==
+== What is the code snippet and how it work ? ==
   *  First we configure our casper Servlet which comes as a part of casper.jar file ,also we are providing a addtional paramater $dir-path$ this tell servlet where to pick up the casper files.Note make sure you are adding '/' at end of file path otherwise casper will through execption.
      {{{
        <servlet>
@@ -52,7 +52,23 @@ This guide walk through how to configure casper in your web application.
    }}}
 
 
+= Example =
+
+  *  Create a file "hello.casper" in the $dir-path$ defined in web.xml.
+  *  Add the following code snippet to "hello.casper" file.
+    {{{
+        <% var name = request.getParameter("name"); %>
+        <%= "Hello" %>
+        <% if(name!=null) { %>
+                    ${name}
+        <% }  %>
+    }}}
+  * Type the URL in your browser "http://hostname:port/appname/hello.casper?name=vivek"
+  * You will get the following result
+   {{{
+      Hello vivek
+   }}}
+    _You can direct use request object in your casper file._
 
 
-
- 
+_Soon will upgrade with ant file for installation._
