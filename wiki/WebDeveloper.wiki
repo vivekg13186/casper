@@ -8,4 +8,23 @@ This guide walk through how to configure casper in your web application.
 = Installation =
 
   * Download latest version of "casper.jar" file from download page.
+  * Copy "casper.jar" to your web application folder by default it will be _*"webappfolder/WEB-INF/lib/"*_.
+  * Open "webappfolder/WEB-INF/*web.xml*" file and add the following code snippet under *<web-app>* tag
+     {{{
+        <servlet>
+           <description>eval casper files</description>
+           <servlet-name>casper</servlet-name>
+           <servlet-class>com.casper.CasperDispatcher</servlet-class>
+        <init-param>
+           <param-name>casper</param-name>
+          <param-value><dir-path>/</param-value>
+        </init-param>
+       </servlet>
+       <servlet-mapping>
+       <servlet-name>casper</servlet-name>
+        <url-pattern>*.casper</url-pattern>
+    </servlet-mapping>
+    
+     }}}
+  * Replace *<dir-path>* with you dir folder path where put all your *.casper files.
    
